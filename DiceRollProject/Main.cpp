@@ -65,6 +65,6 @@ int main()
 	system("cls"); //Clears console
 
 	for (int i = 0; i <= 10; i++) {
-		cout << "Total " << i + 2 << " = " << tallies[i] << endl;
+		cout << "Total " << i + 2 << " | " << tallies[i] << endl;
 	}
 } //end main
