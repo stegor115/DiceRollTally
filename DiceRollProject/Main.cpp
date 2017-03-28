@@ -17,7 +17,7 @@ int main()
 	int dieOne;
 	int dieTwo;
 	int totalRolls = 40000000;
-	srand(time(0)); //srand is the seed of rand(), by using time(0), it's a constantly changing number based on number of seconds since 1970.
+	srand(time(0)); //srand is the seed of rand(), by using time(0), fetch's system's time in seconds since 1970.
 
 	cout << "Rolling the dice " << totalRolls << " times, please be patient...";
 
@@ -25,41 +25,8 @@ int main()
 		dieOne = 1 + (rand() % 6); // 1+rand()%6, this forces the rand() to pick a number from 0-5, thus we add one in order to get results from 1-6.
 		dieTwo = 1 + (rand() % 6);
 		result = dieOne + dieTwo;
-		switch (result) {
-		case 2:
-			tallies[0]++;
-			break;
-		case 3:
-			tallies[1]++;
-			break;
-		case 4:
-			tallies[2]++;
-			break;
-		case 5:
-			tallies[3]++;
-			break;
-		case 6:
-			tallies[4]++;
-			break;
-		case 7:
-			tallies[5]++;
-			break;
-		case 8:
-			tallies[6]++;
-			break;
-		case 9:
-			tallies[7]++;
-			break;
-		case 10:
-			tallies[8]++;
-			break;
-		case 11:
-			tallies[9]++;
-			break;
-		case 12:
-			tallies[10]++;
-			break;
-		} //end switch
+
+		tallies[result - 2]++; //subtracts two to fit inside array
 	} //end for
 
 	system("cls"); //Clears console
